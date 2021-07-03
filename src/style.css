@@ -1,0 +1,203 @@
+/* whole page style */
+/* 
+background: #36393E - dark, all colours have proper contrast
+
+white text: #FFFFFF - text 11.59:1
+blue text: #9DE6FF - highlight 8.38:1
+pink text: #FFB8CA - company name 7.02:1
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); /*import Roboto font for later use */
+
+body {
+  font-family: 'Roboto', Arial ; /* Arial is a good readable font for if Roboto fails */
+  background-color: #36393E; /* slightly darker white */
+  color: #FFFFFF; /* white text color */
+}
+
+footer {
+  text-align: right;
+}
+
+a { /* makes all links look like normal text */
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+li { /* makes all list have no style, no dots or numbers at the start */
+  list-style: none;
+}
+
+header {
+  position: fixed; /* when the page scrolls this stays in place */
+  margin: -10px; /* pushes the header up so there isn't a gap */
+  padding: 0px 50px; /* moves the header away from the edges of the page */
+  display: flex;
+  align-items: center;
+  background-color: #36373e; /* slightly darker color to distinguish the header from the body */
+}
+
+nav > ul {
+  width: 30vw; /* space between the items */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* adds a gap between the items which width can use */
+}
+
+button, .button-class{ /* makes all buttons this style, class is for input buttons */
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+  background-color: transparent; /* so the background color is that of the bodies color */
+  border: 1px solid #FFFFFF;
+  color: #9DE6FF;
+  margin: 5px 0px;
+  font-size: 18px;
+}
+
+button:hover, .button-class:hover{ /* makes the button more satisfying when hovered */
+  background-color: #9DE6FF; /* makes the background color blue */
+  color: #36393E; /* makes the text color the same as the background */
+  transition: background-color 1s, color 1s;
+}
+
+/* text color */
+.blue-text { /* highlight */
+  color: #9DE6FF;
+}
+
+.pink-text { /* company name */
+  color: #FFB8CA;
+}
+
+.white-text { /* normal text */
+  color: #FFFFFF;
+}
+
+/* text scaling. Each class scales a different header */
+.larger-text40px, h1 { /* H1 page header blurb */
+  font-size: 40px;
+}
+
+.larger-text35px, h2, h3 { /* H3 pillar header, H2 Our story header */
+  font-size: 35px;
+}
+
+.larger-text30px, h4, h5 { /* H5 price header, H4 pillar header */
+  font-size: 30px;
+}
+
+.larger-text20px, h6 { /* H6 price package headers */
+  font-size: 20px;
+}
+
+/* specific things */
+.border { /* adds a border around the element to make it pop more */
+  outline: 2px solid #9DE6FF; /* blue outline */
+  outline-offset: 10px;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.left-align-text {
+  text-align: left;
+}
+
+.limit-size { /* so paragraphs stay in the center and look good */
+  width: 600px;
+}
+
+.center { /* centers larger elements by setting the right margin to auto so it goes to the middle */
+  margin: 0 auto; 
+}
+
+.logo { 
+  width: 60vw; /* makes the nav elements draw to the right of the screen by setting the width of the container */
+}
+
+.logo > a > img {  /* affects the img child of the logo container */
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+}
+
+.promo-video {
+  height: 300px;
+  width: 500px;
+  border-style: none;
+  padding: 50px 320px; /* centers the video, better way? */
+}
+/* pricing options */
+.price-title {
+  text-transform: uppercase;
+  font-weight: 600; /* makes the font super bold and eyecatching*/
+}
+
+#price { /* first make the container flex the items in a row this makes all the text and things align first before telling it to go in a column*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.package { /* then make the specific items display in a column */
+  display: flex;
+  flex-direction: column; /* makes all the elements appear in three differnt columns but still in a row because of the #price flex-direction */
+  align-items: center;
+  text-align: left;
+  padding: 10px 50px; /* pushes the items away from the top and away from eachother */
+}
+
+.package > ul > li { /* class but looks for the <ul> children then for the <li> children */
+  padding: 5px; /* pushes the text away from each other */
+}
+
+/* scaling using media query */
+@media (max-width: 800px){ /* scaling for smaller displays */
+  nav > ul {
+    flex-direction: column; /* column saves space with smaller displays */
+  }
+  .logo {
+    width: 45vw; /* brings the nav items closer to the logo */
+  }
+  nav li {
+    padding-bottom: 5px; /* adds space between the column items */
+  }
+  .promo-video{ /* video width caused the whole page to be broken on certain screens */
+    width: 350px;
+  }
+  .promo-video, #pillar-list{ /* aligns things to the left of the screen */
+    padding: 30px 0px;
+  }
+  .limit-size, #our-story-paragraph{ /* limit the width of large elements  */
+    width: 340px;
+  }
+  #price{
+    flex-direction: column; /* for mobile makes the items in a column to save space */
+  }
+}
+
+/* grid style items */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr; /* one column layout - doesn't need any fancy columns */
+  grid-template-rows: repeat(auto-fit, minmax(100px, 1fr)); /* auto grid so it scales to any size screen */
+  grid-template-areas:
+    "header"
+    "center"
+    "footer";
+}
+
+/* makes all the right tags use the grid-template-areas from above */
+.header{
+  grid-area: header;
+}
+
+.center{
+  grid-area: center;
+}
+
+.footer{
+  grid-area: footer;
+}

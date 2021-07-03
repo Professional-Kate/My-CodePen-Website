@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Product page but better 😏</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head id="head">
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> <!-- script for the testing box to see what I need to do-->
+    <title id="title">Eraser.</title>
+  </head>
+  <body id="body">
+    <div class="grid-container"> <!--main container for the grid-->
+      <div class="header">
+        <header id="header">
+          <div class="logo" id="header-img-div"> <!--company logo-->
+            <a href="https://codepen.io/SpicyTabloid/full/qBRYayw" id="logo-link"> <!-- when you click the img you are sent back to the webpage -->
+              <img
+                  id="header-img"
+                  src="https://i.imgur.com/Yw5AUhd.png"
+                  alt="Our companies logo"
+                  />
+            </a>
+          </div>          
+          <div id="nav-div"> <!--container for the nav bar links-->
+            <nav id="nav-bar">
+              <ul id="nav-list"> <!-- list so I can get the elements close together with flexbox -->
+                <li><a href="#body" class="nav-link" tabindex="0">Top</a></li>
+                <li><a href="#video" class="nav-link" tabindex="1">Our Three Pillars</a></li> <!-- links to the video because if I go to that it lines up better -->
+                <li><a href="#h3-pillar-bottom" class="nav-link" tabindex="2">Price</a></li> <!-- link to the pillar botton because it lines up better -->
+              </ul>
+            </nav>
+          </div>
+        </header>
+      </div>
+      <div class="center"> <!--main content-->
+        <section id="introduction-text"> <!-- beginning text of the site -->
+          <div class="centered-text" id="main-header-text">
+            <h1 id="h1-header" class="white-text">
+              Do you want to be a<span class="blue-text"> whole new person?</span><br>
+              To disappear without a trace of the former you?<br>
+              Want all debt against your current name to be<span class="pink-text"> Erased?</span><br>
+              <span class="blue-text">We can do that.</span><br><br>    
+            </h1>
+          </div>
+        </section>
+            <article class="centered-text" id="our-story">
+              <h2>We are<span class="pink-text"> Eraser</span>, and this is our story:</h2>
+              <p class="larger-text20px center limit-size border" id="our-story-paragraph"><q> <!-- center is needed because limit size changes the width which moves it, better way to do this? -->
+                I formed<span class="pink-text"> Eraser </span> in 2018, at first I never intended for this to be my long-term job. I made this software for myself so I could get a job because I had posted some really stupid things on my social media and couldn't delete them. So I made this software which searches the internet for any trace of your name and deletes it, so you never have to worry about it :)
+                </q><br><br> -<a
+                             id="founder-link"
+                             class="blue-text"
+                             href="https://en.wikipedia.org/wiki/John_(given_name)" 
+                             target="_blank">
+                <u> John</u></a>, our wonderful founder</p> <!--this would link to the founders wikipedia page -->
+              <iframe 
+                  class="promo-video center" 
+                  src="https://www.youtube.com/embed/FsR5Ixw6TJ8" 
+                  title="How it's made Erasers" 
+                  id="video"
+                  allowfullscreen
+                ></iframe>
+             </article> <!-- this video would be something like a video showing our company -->
+              <br>
+          <section class="centered-text" id="three-pillars-div">
+              <h3 id="h3-pillar-top">Here at<span class="pink-text"> Eraser </span>we have<span class="blue-text"> Three Core Pillars </span>which we always try to follow:</h3>
+              <section id="three-pillars-content">
+                <div class="left-align-text">
+                  <ul id="pillar-list">
+                    <li><h4 class="blue-text" id="pillar-one">Pillar one:</h4>
+                      <p class="larger-text20px">Hold the customer's privacy above all, they came here for a reason - we don't need to know that reason, all we need is a name</p>
+                    </li>
+                    <li><h4 class="blue-text" id="pillar-two">Pillar two:</h4>
+                      <p class="larger-text20px">Never keep any old names, addresses, pictures, anything of the old customer. The second they leave our doors they are a new person who has never used our business</p> 
+                    </li>
+                    <li><h4 class="blue-text" id="pillar-three">Pillar three</h4>
+                      <p class="larger-text20px">Always respect the customer. We have all done stupid things but none of us deserve those things to haunt us forever</p>
+                    </li>
+                </ul>
+                </div>
+                <h3 id="h3-pillar-bottom">Now that you know our <span class="blue-text"> Three Core Pillars</span>, it's time to start your new life!</h3>
+                <hr> <!-- dividing line between the top text and the price options -->
+              </section>
+            <h5 id="price-header">Which package would you like?</h5> <!-- the different packages people can buy -->
+            <section class="border" id="price">
+              <div class="package" id="simple-package">
+                <div class="price-title border">Simple Package</div>
+                <h6>£150</h6>
+                <ul>
+                  <li>Delete all your social media</li>
+                  <li>Remove most embarrassing pictures of you</li>
+                  <li>Remove your pictures from Search Engines</li>
+                  <li>Any embarrassing photos: deleted</li>
+                  <li>No more snooping interviewers</li>
+                </ul>
+                <button class="package-button"  tabindex="3">This one!</button>
+              </div>
+              <div class="package" id="full-package"> <!-- the one in the middle will be seen first -->
+                <div class="price-title border">"New life" Package</div>
+                <h6 class="centered-text">£750!<br>
+                  <span class="blue-text">Best value!</span>
+                </h6>
+                <ul>
+                  <li>Everything from the Simple Package</li>
+                  <li>Everything from the Advanced Package</li>
+                  <li>We set you up with a new identity and a new life</li>
+                  <li>You become a different person</li>
+                </ul>
+                <button class="package-button" tabindex="4">This one!</button>
+              </div>
+              <div class="package" id="advanced-package">
+                <div class="price-title border">Advanced Package</div>
+                <h6 class="centered-text">£350<br>
+                  <span class="blue-text">Most popular</span> 
+                </h6>
+                <ul>
+                  <li>Everything from the Simple Package</li>
+                  <li>Removes all pictures of you</li>
+                  <li>Removes all text posts containing your name</li>
+                  <li>Search engines won't know who you are</li>
+                </ul>
+                <button class="package-button" tabindex="5">This one!</button>
+              </div>
+            </section>
+        </section>
+      </div>
+      <div class="footer">
+        <footer id="footer">
+          <br><hr> <!-- seperates the footer from the body -->
+          <div class="center" id="email-form"> <!-- email submit form -->
+            <form id="form" action="https://www.freecodecamp.com/email-submit"> <!-- dead link for the test page -->
+              <label for="email">Join our mailing list to keep up to date with us!</label><br>
+              <input id="email" type="email" name="email" placeholder="Email address"  tabindex="6">
+              <input id="submit" type="submit" value="Get started!" class="button-class"  tabindex="7">
+            </form>
+          </div>
+            <p id="copyright-info">(This isn't) Copyright 2021, <span class="pink-text">Eraser</span></p>
+        </footer>
+      </div>
+    </div>
+  </body>
+ </html>
+<!-- partial -->
+  
+</body>
+</html>
